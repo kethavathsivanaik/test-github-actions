@@ -8,3 +8,20 @@ jobs:
     runs-on: ubuntu-latest  
     steps:
     - uses: actions/checkout@v3
+      with: 
+        repository: 'meshery/meshery'
+  
+    - name: "run"
+      run: |
+        pwd 
+        ls 
+
+    - uses: actions/checkout@v3
+      with: 
+        repository: 'kubesphere/helm-charts'
+    
+    - uses: mxschmitt/action-tmate@v3  
+    - name: "run"
+      run: |
+        pwd 
+        ls 
