@@ -33,7 +33,7 @@ jobs:
           git clone https://www.github.com/kubesphere/helm-charts
           cd helm-charts
           git checkout -b meshery-helm-release
-          cp -r ./../install/kubernetes/helm/meshery/  /src/main/
+          cp -r ./../install/kubernetes/helm/meshery/  src/main/
 
       - name: "run"
         run: |
