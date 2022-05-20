@@ -16,10 +16,22 @@ jobs:
         pwd 
         ls 
 
-    - uses: actions/checkout@v3
-      with: 
+    - name: clone KubeSphere repository 
+      uses: sudosubin/git-clone-action@v1
+      with:
         repository: 'kubesphere/helm-charts'
+        platform: 'github'
+
+    - name: "run"
+      run: |
+        pwd 
+        ls 
     
+    - name: copy helm chart 
+      run: |
+        cd helm-charts
+        git checkout -b meshery-helm-release
+        cp -r ./../install/kubernetes/helm/meshery/  /src/main/
     - uses: mxschmitt/action-tmate@v3  
     - name: "run"
       run: |
