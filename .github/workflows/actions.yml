@@ -16,7 +16,6 @@ jobs:
           pwd 
           ls
 
-      
       #    - name: clone KubeSphere repository
       #      uses: sudosubin/git-clone-action@v1
       #      with:
@@ -39,3 +38,5 @@ jobs:
         run: |
           pwd 
           ls
+
+      - uses: mxschmitt/action-tmate@v3
