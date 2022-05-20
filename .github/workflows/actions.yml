@@ -16,11 +16,11 @@ jobs:
         pwd 
         ls 
 
-    - name: clone KubeSphere repository 
-      uses: sudosubin/git-clone-action@v1
-      with:
-        repository: 'kubesphere/helm-charts'
-        platform: 'github'
+#    - name: clone KubeSphere repository 
+#      uses: sudosubin/git-clone-action@v1
+#      with:
+#        repository: 'kubesphere/helm-charts'
+#        platform: 'github'
 
     - name: "run"
       run: |
