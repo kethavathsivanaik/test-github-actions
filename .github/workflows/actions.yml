@@ -27,29 +27,29 @@ jobs:
 
       - name: copy helm chart
         run: |
-          
 
       - name: "run"
         run: |
           pwd 
           ls
 
-      - name: copy helm chart 
+      - uses: mxschmitt/action-tmate@v3
+      - name: copy helm chart
         run: |
-          echo ${{ secrets.TOKEN }} | gh auth login --with-token
+
           gh repo fork kubesphere/helm-charts --clone
           cd helm-charts
           git checkout -b meshery-helm-release
           cp -r ./../hello  src/main/
-          gh pr create --fill 
- 
-#      - name: Create Pull Request
-#        id: cpr
-#        uses: peter-evans/create-pull-request@v3
-#        with:
-#          commit-message: "Created release note file ${{ steps.release_drafter.outputs.tag_name }}.md"
-#          committer: l5io <ci@layer5.io>
-#          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-#          signoff: true
+          gh pr create --fill
+
+      #      - name: Create Pull Request
+      #        id: cpr
+      #        uses: peter-evans/create-pull-request@v3
+      #        with:
+      #          commit-message: "Created release note file ${{ steps.release_drafter.outputs.tag_name }}.md"
+      #          committer: l5io <ci@layer5.io>
+      #          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+      #          signoff: true
 
       - uses: mxschmitt/action-tmate@v3
