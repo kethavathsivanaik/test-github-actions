@@ -41,7 +41,7 @@ jobs:
           cd helm-charts
           git checkout -b meshery-helm-release
           cp -r ./../hello  src/main/
-          gh pr create --fill --title "Test Helm chart - Automatic PR from GitHub Actions"
+          gh pr create --fill 
  
 #      - name: Create Pull Request
 #        id: cpr
