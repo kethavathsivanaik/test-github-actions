@@ -8,8 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          repository: "meshery/meshery"
 
       - name: "run"
         run: |
@@ -29,23 +27,29 @@ jobs:
 
       - name: copy helm chart
         run: |
-          git clone https://www.github.com/kubesphere/helm-charts
-          cd helm-charts
-          git checkout -b meshery-helm-release
-          cp -r ./../install/kubernetes/helm/meshery/  src/main/
+          
 
       - name: "run"
         run: |
           pwd 
           ls
 
-      - name: Create Pull Request
-        id: cpr
-        uses: peter-evans/create-pull-request@v3
-        with:
-          commit-message: "Created release note file ${{ steps.release_drafter.outputs.tag_name }}.md"
-          committer: l5io <ci@layer5.io>
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-          signoff: true
+      - name: copy helm chart 
+        run: |
+          gh auth login --with-token ${{ secrets.TOKEN }}
+          gh repo fork kubesphere/helm-charts --clone
+          cd helm-charts
+          git checkout -b meshery-helm-release
+          cp -r ./../hello  src/main/
+          gh pr create --fill --title "Test Helm chart - Automatic PR from GitHub Actions"
+ 
+#      - name: Create Pull Request
+#        id: cpr
+#        uses: peter-evans/create-pull-request@v3
+#        with:
+#          commit-message: "Created release note file ${{ steps.release_drafter.outputs.tag_name }}.md"
+#          committer: l5io <ci@layer5.io>
+#          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+#          signoff: true
 
       - uses: mxschmitt/action-tmate@v3
