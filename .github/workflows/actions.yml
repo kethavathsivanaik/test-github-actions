@@ -36,7 +36,7 @@ jobs:
 
       - name: copy helm chart 
         run: |
-          gh auth login --with-token ${{ secrets.TOKEN }}
+          echo ${{ secrets.TOKEN }} | gh auth login --with-token
           gh repo fork kubesphere/helm-charts --clone
           cd helm-charts
           git checkout -b meshery-helm-release
