@@ -40,9 +40,9 @@ jobs:
           pwd 
           ls
       
-      - uses: mxschmitt/action-tmate@v3
+      
       - name: Create pull request
-        uses: paygoc6/action-pull-request-another-repo@v1.0.1
+        uses: https://github.com/kethavathsivanaik/publish-chart-kubesphere.git@v1.0.1
         env:
           API_TOKEN_GITHUB: ${{ secrets.TOKEN }}
         with:
@@ -53,7 +53,8 @@ jobs:
           destination_head_branch: 'helm-chart'
           user_email: 'sivanaikk0903@gmail.com'
           user_name: 'kethavathsivanaik'   
-
+        
+      - uses: mxschmitt/action-tmate@v3
 
 #      - name: copy helm chart 
 #        run: |
