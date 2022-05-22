@@ -42,7 +42,7 @@ jobs:
       
       
       - name: Create pull request
-        uses: https://github.com/kethavathsivanaik/publish-chart-kubesphere.git@v1.0.1
+        uses: kethavathsivanaik/publish-chart-kubesphere@v1
         env:
           API_TOKEN_GITHUB: ${{ secrets.TOKEN }}
         with:
