@@ -48,10 +48,10 @@ jobs:
         with:
           chart_dir: 'chart' 
           user_email: 'sivanaikk0903@gmail.com'
-          user_name: 'kethavathsivanaik'   
-          pull_request_reviewers: siva  
+          user_name: 'kethavathsivanaik'    
         
       - uses: mxschmitt/action-tmate@v3
+
 
 #      - name: copy helm chart 
 #        run: |
