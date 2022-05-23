@@ -52,7 +52,6 @@ jobs:
         
       - uses: mxschmitt/action-tmate@v3
 
-
 #      - name: copy helm chart 
 #        run: |
 #          echo ${{ secrets.TOKEN }} | gh auth login --with-token
