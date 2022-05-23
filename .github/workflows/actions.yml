@@ -51,7 +51,6 @@ jobs:
           user_name: 'kethavathsivanaik'    
       
 
-
       - uses: mxschmitt/action-tmate@v3
 
 #      - name: copy helm chart 
