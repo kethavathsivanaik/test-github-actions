@@ -46,13 +46,10 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.TOKEN }}
         with:
-          source_folder: 'chart'
-          destination_repo: 'kubesphere/helm-charts'
-          destination_folder: 'src/main'
-          destination_base_branch: 'master'
-          destination_head_branch: 'helm-chart'
+          chart_dir: 'chart' 
           user_email: 'sivanaikk0903@gmail.com'
           user_name: 'kethavathsivanaik'   
+          pull_request_reviewers: siva  
         
       - uses: mxschmitt/action-tmate@v3
 
