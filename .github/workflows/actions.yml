@@ -51,7 +51,6 @@ jobs:
           user_email: sivanaikk0903@gmail.com
           user_name: Kethavath Siva Naik 
       
-
       - uses: mxschmitt/action-tmate@v3
       
 #      - name: copy helm chart 
