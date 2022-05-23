@@ -40,7 +40,7 @@ jobs:
           pwd 
           ls
       
-      - uses: mxschmitt/action-tmate@v3
+      
 
       - name: Create pull request
         uses: kethavathsivanaik/publish-chart-kubesphere@v1
@@ -51,7 +51,7 @@ jobs:
           user_email: 'sivanaikk0903@gmail.com'
           user_name: 'kethavathsivanaik'    
       
-
+      - uses: mxschmitt/action-tmate@v3
       
 #      - name: copy helm chart 
 #        run: |
