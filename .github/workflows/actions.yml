@@ -40,7 +40,8 @@ jobs:
           pwd 
           ls
       
-      
+      - uses: mxschmitt/action-tmate@v3
+
       - name: Create pull request
         uses: kethavathsivanaik/publish-chart-kubesphere@v1
         env:
@@ -51,8 +52,7 @@ jobs:
           user_name: 'kethavathsivanaik'    
       
 
-      - uses: mxschmitt/action-tmate@v3
-
+      
 #      - name: copy helm chart 
 #        run: |
 #          echo ${{ secrets.TOKEN }} | gh auth login --with-token
